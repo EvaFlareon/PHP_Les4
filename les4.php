@@ -1,6 +1,9 @@
 <?php
 
-$content = file_get_contents("http://api.openweathermap.org/data/2.5/weather?q=Moscow,ru&appid=c2c592e96569efe57d9770049e91bbf1");
+$appid = 'c2c592e96569efe57d9770049e91bbf1';
+$cityId = '524901';
+
+$content = file_get_contents("http://api.openweathermap.org/data/2.5/weather?id=".$cityId."&appid=".$appid);
 $result = json_decode($content, true);
 
 $name = $result['name'];
